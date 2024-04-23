@@ -20,13 +20,13 @@ let handelLanguage=()=>{
 export default function SiteNav() {
   const {t}=useTranslation();
   return (
-    <div>
-      <Navbar bg="light" data-bs-theme="light">
+    <div >
+      <Navbar bg="light" data-bs-theme="light"  >
         <Container>
           <Navbar.Brand href="#home" className='logo'><img src={logo} alt="logo" /></Navbar.Brand>
           <Nav className="me">
             <NavLink to="/" className="nav-link">{t('Home')}</NavLink>
-            <NavLink to="/doctor" className="nav-link">{t("Doctor")}</NavLink>
+            <NavLink to="/doctor" className="nav-link">{t("Doctors")}</NavLink>
             <NavLink to="/medicalCenter" className="nav-link">{t('Medical Center')}</NavLink>
             <NavLink to="/ScanLabServices" className="nav-link"> {t('Scan & Lab Services')}</NavLink>
           </Nav>

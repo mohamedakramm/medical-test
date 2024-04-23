@@ -1,0 +1,26 @@
+ [
+        {
+          "name":"Dr. Samira Hadid, M.D.",
+          "specialization":"CONSULTANT FOR CHILDREN, NEONATOLOGY",
+          "Pediatrician": " Pediatrician Specialized in Pediatric Diabetes",
+          "location": "El-Sheikh Zayed: Shabab Street",
+          "fees": 400
+        },
+        {
+          "name": "Dr. DoctorAn Elkhashab",
+          "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+          "Pediatrician" :"Pediatrician Specialized in Pediatrics and New Born",
+          "location": "DownTown mall-Beside",
+          "fees": 350
+        },
+        
+          {
+            "name": "Dr. DoctorAn Elkhashab",
+            "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+            "Pediatrician" :"Pediatrician Specialized in Pediatrics and New Born",
+            "location": "DownTown mall-Beside",
+            "fees": 350
+          }
+        
+
+  ]
