@@ -13,8 +13,8 @@ setInfo(data)
 
 
   return (
-    <div className='m-5 text-center' style={{marginTop:'0'}}>
-        <Container fluid>
+    <div className=' text-center' >
+        <Container    >
             <Row>
             {
                 info.map((doctor,index)=>

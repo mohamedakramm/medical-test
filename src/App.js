@@ -8,11 +8,12 @@ import MedicalCenter from './views/medical center/MedicalCenter.jsx'
 import ScanLabServices from './views/Scan&LabServices/ScanLabServices';
 import { useTranslation } from 'react-i18next';
 
+
 function App() {
   const {i18n}=useTranslation();
   return (
     <div className={i18n.language==="ar"?"rtl":"" }>
-      
+
       <SiteNav/>
       <Routes>
         <Route path='/'element={<Home/>} ></Route>
