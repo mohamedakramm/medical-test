@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../../locale/Phsiotherapy.json'
 import { useState } from 'react'
 import { useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
@@ -8,8 +7,14 @@ import SinglePhysiotherapy from './SinglePhysiotherapy';
 function PhysiotherapyCenter() {
   const [infoo,setInfoo]=useState([]);
 
+  let getData =()=>{
+    fetch("http://localhost:2244/Phsiotherapy")
+    .then(json => json.json())
+    .then(res => setInfoo(res))
+  }
+
   useEffect(()=>
-    setInfoo(data)
+    getData()
   ,[])
   return (
     <div  className=' text-center'>

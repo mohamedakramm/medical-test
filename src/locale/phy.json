@@ -1,25 +1,23 @@
 {
-    "labData":  [
+    "Phsiotherapy":[
         {
             "id":1,
-            "name":"El-mokhtabar Laboratory",
-            "spacifcation":"Test & radiolagy",
+            "name":"AL-kayn Center For Phsiotherapy",
             "location":"Sherouk City",
             "phone":"01005469500"
         },
         {
             "id":2,
-            "name":"El-mokhtabar Laboratory",
-            "spacifcation":"Test & radiolagy",
+            "name":"AL-kayn Center For Phsiotherapy",
             "location":"Sherouk City",
             "phone":"01005469500"
         },
         {
             "id":3,
-            "name":"El-mokhtabar Laboratory",
-            "spacifcation":"Test & radiolagy",
+            "name":"AL-kayn Center For Phsiotherapy",
             "location":"Sherouk City",
             "phone":"01005469500"
         }
-      ] 
+      ]
+     
 }

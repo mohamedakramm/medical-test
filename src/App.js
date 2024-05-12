@@ -7,6 +7,10 @@ import PageDoctors from './views/doctors/PageDoctors.jsx'
 import MedicalCenter from './views/medical center/MedicalCenter.jsx'
 import ScanLabServices from './views/Scan&LabServices/ScanLabServices';
 import { useTranslation } from 'react-i18next';
+// import SearshBar from './Componant/Searsh/SearshBar.jsx';
+import Doctordetails from './Componant/doctors/Doctordetails.jsx';
+import Labdetails from './Componant/Labtor/Labdetails.jsx';
+import Phydetails from './Componant/physiotherapy/Phydetails.jsx';
 
 
 function App() {
@@ -20,6 +24,10 @@ function App() {
         <Route path='/doctor'element={<PageDoctors/>} ></Route>
         <Route path='/medicalCenter'element={<MedicalCenter/>} ></Route>
         <Route path='/ScanLabServices'element={<ScanLabServices/>} ></Route>
+        {/* <Route path="/doctor/:query" element={<SearshBar/>} /> */}
+        <Route path="/doctor/:doctorId" element={<Doctordetails/>} />
+        <Route path="/ScanLabServices/:labId" element={<Labdetails/>} />
+        <Route path="/medicalCenter/:phyId" element={<Phydetails/>} />
       </Routes>
     </div>
   );

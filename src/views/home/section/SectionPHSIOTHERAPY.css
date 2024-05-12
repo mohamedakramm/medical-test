@@ -1,0 +1,25 @@
+#imgg{
+    width: 100%;
+}
+#ppp{
+    width: 350px;
+    margin-left: 184px;
+    margin-top: 20px;
+}
+#hhh{
+    margin-left: 184px;
+ 
+}
+
+#btnn{
+    width: 146px;
+    border: 1px #937950;
+    background-color: #ac8b58;
+    color: black;
+    border-style: solid;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-top: 30px;
+    margin-left: 184px;
+
+}

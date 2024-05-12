@@ -3,7 +3,10 @@
 }
 
 body{
-  height: 50000px;
+  
+  background-image: url(./assets/s2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 *{
   box-sizing: border-box;

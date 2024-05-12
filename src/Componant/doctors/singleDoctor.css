@@ -15,6 +15,25 @@
     
     
    
+
+}
+.docpicc {
+
+    border: 1px solid gray;
+    position: absolute  ;
+    margin: auto;
+    width: 150px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: relative;
+    z-index: 1;
+   
+    border-spacing: 100px;
+    top: 70px;
+    left: 118px;
+
 }
 .crdDoc{
     height: 75% !important;

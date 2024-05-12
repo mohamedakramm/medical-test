@@ -1,0 +1,68 @@
+{
+    "doctors":[
+        { 
+          "id":1,
+          "name":"Dr. Samira Hadid, M.D.",
+          "specialization":"CONSULTANT FOR CHILDREN NEONATOLOGY",
+          "Pediatrician": " Pediatrician Specialized in Pediatric Diabetes",
+          "location": "El-Sheikh Zayed: Shabab Street",
+          "fees": 400 ,
+          "speciall":"Deramatologist" 
+        },
+       
+        {
+          "id":2,
+          "name": "Dr. DoctorAn Elkhashab",
+          "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+          "Pediatrician" :"Pediatrician Specialized in Pediatrics and  Born",
+          "location": "DownTown mall-Beside",
+          "fees": 350,
+          "speciall":"Dentest" 
+        },
+        
+          {
+            "id":3,
+            "name": "Dr. DoctorAn Elkhashab",
+            "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+            "Pediatrician" :"Pediatrician Specialized in Pediatrics and Born",
+            "location": "DownTown mall-Beside",
+            "fees": 350,
+            "speciall":"Phsiotherapy" 
+          },
+          {
+            "id":4,
+            "name": "Dr. DoctorAn Elkhashab",
+            "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+            "Pediatrician" :"Pediatrician Specialized in Pediatrics and Born",
+            "location": "DownTown mall-Beside",
+            "fees": 350,
+            "speciall":"Ear and Noise" 
+          },
+          {
+            "id":5,
+            "name": "Dr. DoctorAn Elkhashab",
+            "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+            "Pediatrician" :"Pediatrician Specialized in Pediatrics and Born",
+            "location": "DownTown mall-Beside",
+            "fees": 350,
+            "speciall":"orthopedist" 
+          },
+          {
+            "id":6,
+            "name": "Dr. DoctorAn Elkhashab",
+            "specialization": "CONSULTANT OF PEDIATRIC AND NEONATOLOGY MD", 
+            "Pediatrician" :"Pediatrician Specialized in Pediatrics and Born",
+            "location": "DownTown mall-Beside",
+            "fees": 350,
+            "speciall":"Cardiologist" 
+          }
+       
+    
+         
+        
+       
+    
+    
+    
+    ]
+}

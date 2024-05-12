@@ -1,0 +1,22 @@
+ .textt{
+    position: relative;
+    z-index: 1;
+    top: 177px;
+}  
+.imggg{
+    width: 43%;
+    position: relative;
+    top: 25px;
+    left: 295px;
+}
+#btn{
+    width: 146px;
+    border: 1px #937950;
+    background-color: #ac8b58;
+    color: black;
+    border-style: solid;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-left: 57px;
+}
