@@ -1,14 +1,32 @@
-import React ,{ useState } from 'react'
+import React ,{ useEffect, useState } from 'react'
 import { Button, Modal, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export default function AppoinmentPhy({ show, handleClose ,phyId }) {
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState(null);
     const [formData, setFormData] = useState({
-        phyid: `${phyId.id}`,
+        phyid: '',
         name: '',
         date: '',
         time: '',
+        patientId:''
       });
-    
+      useEffect(() => {
+        const storedUser = sessionStorage.getItem('user');
+        if (storedUser) {
+          const parsedUser = JSON.parse(storedUser);
+          setUser(parsedUser);
+          setFormData(prevFormData => ({
+            ...prevFormData,
+            patientId: parsedUser.id,
+            phyid: phyId?.id || '',  
+          }));
+        } else {
+          navigate('/login');
+        }
+      }, [navigate, phyId]);
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -34,6 +52,9 @@ export default function AppoinmentPhy({ show, handleClose ,phyId }) {
           body: JSON.stringify(formData),
         });
         return response.json(); 
+      }
+      if (!user) {
+        return <div>Loading...</div>;
       }
       
   return (

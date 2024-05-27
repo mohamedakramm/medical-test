@@ -29,9 +29,9 @@ export default function SectionPHSIOTHERAPY() {
                 <div >
                     
                         <h2 id='hhh'>Feeling <br /> better starts <br /> with moving <br /> better</h2>
-                        <p id='ppp'> 
+                        <div id='ppp'> 
                         In our physiotherapy centers, we offer many services to help the patient, such as rehabilitative physiotherapy, pediatricphysiotherapy and Nutrition follow-ups
-                        </p>
+                        </div>
                         <Button onClick={()=>{gotoNewPge();scrollTotop()}} id='btnn' >learn more</Button>
                     
                 

@@ -11,14 +11,18 @@ import { useTranslation } from 'react-i18next';
 import Doctordetails from './Componant/doctors/Doctordetails.jsx';
 import Labdetails from './Componant/Labtor/Labdetails.jsx';
 import Phydetails from './Componant/physiotherapy/Phydetails.jsx';
-
-
-function App() {
+import Login from './Componant/login/Login.jsx'
+import { useLocation } from 'react-router-dom';
+import AdminDashboard from './views/AdminDashboard/AdminDashboard.jsx';
+import Profile from './views/Acount/Profile.jsx'
+function App() { 
   const {i18n}=useTranslation();
+  const location = useLocation();
   return (
-    <div className={i18n.language==="ar"?"rtl":"" }>
-
-      <SiteNav/>
+    <div className={i18n.language==="ar"?"rtl":"" } >
+      
+       {(location.pathname !== '/login'&& location.pathname !== '/Dashboard') ?  <SiteNav/> : null }
+        
       <Routes>
         <Route path='/'element={<Home/>} ></Route>
         <Route path='/doctor'element={<PageDoctors/>} ></Route>
@@ -28,6 +32,10 @@ function App() {
         <Route path="/doctor/:doctorId" element={<Doctordetails/>} />
         <Route path="/ScanLabServices/:labId" element={<Labdetails/>} />
         <Route path="/medicalCenter/:phyId" element={<Phydetails/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/Dashboard" element={<AdminDashboard/>}/>
+        <Route path="/Profile" element={<Profile/>}/>
+        
       </Routes>
     </div>
   );

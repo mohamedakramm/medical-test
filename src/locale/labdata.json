@@ -1,25 +1,25 @@
 {
-    "labData":  [
-        {
-            "id":1,
-            "name":"El-mokhtabar Laboratory",
-            "spacifcation":"Test & radiolagy",
-            "location":"Sherouk City",
-            "phone":"01005469500"
-        },
-        {
-            "id":2,
-            "name":"El-mokhtabar Laboratory",
-            "spacifcation":"Test & radiolagy",
-            "location":"Sherouk City",
-            "phone":"01005469500"
-        },
-        {
-            "id":3,
-            "name":"El-mokhtabar Laboratory",
-            "spacifcation":"Test & radiolagy",
-            "location":"Sherouk City",
-            "phone":"01005469500"
-        }
-      ] 
+  "labData": [
+    {
+      "id": "1",
+      "name": "El-mokhtabar Laboratory",
+      "spacifcation": "test",
+      "location": "Sherouk City",
+      "phone": "01099284382"
+    },
+    {
+      "id": "2",
+      "name": "El-mokhbjbj Laboratory",
+      "spacifcation": "radiolgy",
+      "location": "DownTown mall-Beside",
+      "phone": "01021574917"
+    },
+    {
+      "id": "21",
+      "name": "El-mokhtabar Laborator",
+      "spacifcation": "test",
+      "location": "DownTown mall-Beside",
+      "phone": "01019918253"
+    }
+  ]
 }

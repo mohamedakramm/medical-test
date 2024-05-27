@@ -1,23 +1,25 @@
 {
-    "Phsiotherapy":[
-        {
-            "id":1,
-            "name":"AL-kayn Center For Phsiotherapy",
-            "location":"Sherouk City",
-            "phone":"01005469500"
-        },
-        {
-            "id":2,
-            "name":"AL-kayn Center For Phsiotherapy",
-            "location":"Sherouk City",
-            "phone":"01005469500"
-        },
-        {
-            "id":3,
-            "name":"AL-kayn Center For Phsiotherapy",
-            "location":"Sherouk City",
-            "phone":"01005469500"
-        }
-      ]
-     
+  "Phsiotherapy": [
+    {
+      "id": "1",
+      "name": "AL-kayn Center ",
+      "spacifcation": "test",
+      "location": "Sherouk City",
+      "phone": "01099284382"
+    },
+    {
+      "id": "2",
+      "name": "El-mokhtabar Laboratory",
+      "spacifcation": "dssfs",
+      "location": "Sherouk City",
+      "phone": "01021574917"
+    },
+    {
+      "id": "21",
+      "name": "mohamed akramn",
+      "spacifcation": "test",
+      "location": "DownTown mall-Beside",
+      "phone": "01021574917"
+    }
+  ]
 }

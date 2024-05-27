@@ -1,0 +1,48 @@
+{
+  "register": [
+    {
+      "id": "ada0",
+      "name": "mohamed",
+      "email": "mohamedakramm298@gmail.com",
+      "mobile": "1213123",
+      "address": "343242fgdsf",
+      "sex": "male",
+      "dateOfBirth": "2024-05-07",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "id": "b2fb",
+      "name": "mohame",
+      "email": "admin@gmail.com",
+      "mobile": "1213123",
+      "address": "343242fgdsf",
+      "sex": "male",
+      "dateOfBirth": "2024-05-15",
+      "password": "12345678",
+      "role": "admin"
+    },
+    {
+      "id": "92fe",
+      "name": "mohamed akram",
+      "email": "mohamedakramm98@gmail.com",
+      "mobile": "1213123",
+      "address": "343242fgdsf",
+      "sex": "male",
+      "dateOfBirth": "2024-05-06",
+      "password": "asdf",
+      "role": "user"
+    },
+    {
+      "id": "329e",
+      "name": "mohamed",
+      "email": "mohamedakramm2@gmail.com",
+      "mobile": "1213123",
+      "address": "343242fgdsf",
+      "sex": "male",
+      "dateOfBirth": "2024-05-08",
+      "password": "1234",
+      "role": "user"
+    }
+  ]
+}
