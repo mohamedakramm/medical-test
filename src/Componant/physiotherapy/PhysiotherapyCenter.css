@@ -1,13 +1,13 @@
 .phypic{
 
-    border: 1px solid rgb(53, 50, 50);
+    border: 1px solid rgba(53, 50, 50, 0.01);
     position: absolute  ;
     
-    width: 150px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    width: 160px;
+    border-top-left-radius: 35%;
+    border-top-right-radius: 35%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 35%;
     position: relative;
     z-index: 1;
     border-spacing: 100px;

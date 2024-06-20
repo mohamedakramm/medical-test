@@ -1,6 +1,8 @@
 
 import Card from 'react-bootstrap/Card';
-import photoDoctor from '../../assets/psychologist-dalia-el-chimi-psychiatry_20240422002420245.jpg'
+import photoDoctor from '../../assets/avatar-1718884846490-130232310.jpg'
+import photoDoctor1 from '../../assets/avatar-1718884846490-130232310.jpg'
+import photoDoctor2 from '../../assets/avatar-1718884846490-130232310.jpg'
 import { Col  ,Image  } from 'react-bootstrap';
 import './singleDoctor.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,7 +28,7 @@ const gotoNewPge=()=>{
           ?
           <Image  variant="none" src={photoDoctor} className='docpicc  shadow-lg  mb-4 ' />
           : 
-          <Image  variant="none" src={photoDoctor} className='docpic  shadow-lg  mb-4 ' />
+          <Image  variant="none" src={photoDoctor1} className='docpic  shadow-lg  mb-4 ' />
         }
           <Card variant="none" className='crdDoc' >
             <Card.Body className='cardBody'>
