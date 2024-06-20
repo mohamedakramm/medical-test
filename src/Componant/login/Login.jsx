@@ -74,7 +74,7 @@ export default function Login() {
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5050/register'); // يمكن أن يكون عنوان URL مختلفًا حسب موقع ملف JSON لبيانات المستخدمين
+      const response = await fetch('http://localhost:5050/register'); 
       if (!response.ok) {
         throw new Error('Failed to fetch user data');
       }
