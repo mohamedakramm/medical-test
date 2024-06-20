@@ -1,14 +1,18 @@
 #imgg{
-    width: 100%;
+    width: 70%;
+    margin-left: 20px;
+   margin-bottom: 25px;
+   margin-top: 25px;
 }
 #ppp{
     width: 350px;
-    margin-left: 184px;
-    margin-top: 20px;
+    margin-left: 304px;
+    margin-top: 25px;
 }
 #hhh{
-    margin-left: 184px;
- 
+    margin-top: 25px;
+    margin-left: 304px;
+    width: 880px;
 }
 
 #btnn{
@@ -20,6 +24,6 @@
     font-size: 18px;
     text-transform: capitalize;
     margin-top: 30px;
-    margin-left: 184px;
+    margin-left: 304px;
 
 }

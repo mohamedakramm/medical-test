@@ -5,7 +5,7 @@ import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/WhatsApp Image 2024-04-26 at 01.30.25_857b4d36.jpg';
+import logo from '../assets/WhatsApp Image 2024-04-26 at 01.30.25_857b4d36.png';
 import './SiteNav.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -41,15 +41,15 @@ export default function SiteNav() {
       navigate('/');
     }
   }, [navigate]);
-var a=3;
-//heba omran
- const { t } = useTranslation();
+
+
+  const { t } = useTranslation();
 
   return (
     <>
-      <Navbar expand="md" className="bg-body-tertiary">
+      <Navbar expand="md" className=" custom-navbar">
         <Container>
-          <Navbar.Brand href="#home" className='logo'><img src={logo} alt="logo" /></Navbar.Brand>
+          <Navbar.Brand href="#home" className='logo'><img src={logo} alt="logo"  className="navbar-logo" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me">
@@ -58,7 +58,7 @@ var a=3;
               <NavLink to="/ScanLabServices" className="nav-link">{t('RADIOLOGY&TEST')}</NavLink>
               <NavLink to="/medicalCenter" className="nav-link"> {t('PHSIOTHERAPY')}</NavLink>
             </Nav>
-            <Nav style={{ marginLeft: '70px' }}>
+            <Nav className="search-and-lang">
               <FontAwesomeIcon icon={faLanguage}
                 onClick={handleLanguage}
                 className='icon'
@@ -91,3 +91,6 @@ var a=3;
     </>
   );
 }
+
+
+//heba omran

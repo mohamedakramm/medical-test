@@ -19,7 +19,7 @@ export default function SectionPHSIOTHERAPY() {
   }
   return (
     <div>
-        <Container style={{marginTop:'90px'}}>
+        
             <Row lg='2' md='2' sm='12'>
                 <div >
                     
@@ -37,7 +37,7 @@ export default function SectionPHSIOTHERAPY() {
                 
                 </div>
             </Row>
-        </Container>
+        
     </div>
   )
 }

@@ -1,0 +1,86 @@
+.header {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/11.webp') no-repeat center center;
+  background-size: cover;
+  color: white;
+  margin-top:0% ;
+ 
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  
+}
+
+.menu-button {
+  display: none;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header-content {
+  min-height: 45vh;
+ 
+}
+
+
+.header-title {
+  font-size: 6rem;
+  margin-bottom: 390px;
+  margin-top: 60px;
+  margin-left: -130px;
+}
+
+.header-text {
+  opacity: 0.8;
+  margin-top: -80px;
+  font-size: 1.25rem;
+  margin-right: 700px;
+}
+
+.header-buttons {
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.btn.primary {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    margin-left: auto;
+  }
+}
