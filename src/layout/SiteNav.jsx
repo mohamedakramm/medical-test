@@ -41,9 +41,9 @@ export default function SiteNav() {
       navigate('/');
     }
   }, [navigate]);
-
-
-  const { t } = useTranslation();
+var a=3;
+//heba omran
+ const { t } = useTranslation();
 
   return (
     <>
