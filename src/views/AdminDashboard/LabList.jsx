@@ -19,8 +19,8 @@ const LabList = ({ labs, editLab, deleteLab }) => {
             <td>{lab.name}</td>
             <td>{lab.spacifcation}</td>
             <td>
-              <Button variant="warning" onClick={() => editLab(lab)}>Edit</Button>
-              <Button variant="danger" onClick={() => deleteLab(lab.id)}>Delete</Button>
+              <Button variant="warning" className="btbook2" onClick={() => editLab(lab)}>Edit</Button>
+              <Button variant="danger"className="btbook3" onClick={() => deleteLab(lab.id)}>Delete</Button>
             </td>
           </tr>
         ))}

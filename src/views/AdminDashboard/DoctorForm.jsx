@@ -122,7 +122,7 @@ const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
           required
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" className="btbook1" type="submit">
         {doctor.id ? 'Update Doctor' : 'Add Doctor'}
       </Button>
     </Form>

@@ -1,0 +1,50 @@
+/* DoctorDashboard.css */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    color: #71757a;
+  }
+  
+  .card-header {
+     background-color: #6b6d6e; /* لون الخلفية */
+  color: white; /* لون النص */
+  font-weight: bold; /* سمك النص */
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .btbook1{
+    margin-left: 263px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 2px solid #87a2be; 
+    color: #060707; 
+    transition: background-color 0.3s, color 0.3s;
+}
+.btbook2{
+  margin-left: 3px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 2px solid #87a2be; 
+  color: #060707; 
+  transition: background-color 0.3s, color 0.3s;
+}
+.btbook3{
+  margin-left: 3px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 2px solid #87a2be; 
+  color: red; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+  

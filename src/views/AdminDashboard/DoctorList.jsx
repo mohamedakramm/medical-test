@@ -19,8 +19,8 @@ const DoctorList = ({ doctors, editDoctor, deleteDoctor }) => {
             <td>{doctor.name}</td>
             <td>{doctor.specialization}</td>
             <td>
-              <Button variant="warning" onClick={() => editDoctor(doctor)}>Edit</Button>
-              <Button variant="danger" onClick={() => deleteDoctor(doctor.id)}>Delete</Button>
+              <Button variant="warning" className="btbook2" onClick={() => editDoctor(doctor)}>Edit</Button>
+              <Button variant="danger"className="btbook3" onClick={() => deleteDoctor(doctor.id)}>Delete</Button>
             </td>
           </tr>
         ))}

@@ -19,8 +19,8 @@ const PhyList = ({ phys, editPhy, deletePhy }) => {
             <td>{phy.name}</td>
             <td>{phy.spacifcation}</td>
             <td>
-              <Button variant="warning" onClick={() => editPhy(phy)}>Edit</Button>
-              <Button variant="danger" onClick={() => deletePhy(phy.id)}>Delete</Button>
+              <Button variant="warning" className="btbook2" onClick={() => editPhy(phy)}>Edit</Button>
+              <Button variant="danger" className="btbook3" onClick={() => deletePhy(phy.id)}>Delete</Button>
             </td>
           </tr>
         ))}

@@ -1,0 +1,36 @@
+/* AdminDashboard.css */
+.sidebar {
+    background-color: #6b6d6e;
+    color: white;
+    width: 15%;
+    min-height: 100vh;
+    padding-top: 50px;
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-item {
+    padding: 20px 15px;
+    cursor: pointer;
+    background-color: #6b6d6e;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #71757a;
+  }
+  
+  .sidebar-item.active {
+    background-color: #71757a;
+    font-weight: bold;
+  }
+  
+  .sidebar-item:not(:last-child) {
+    border-bottom: 1px solid #333;
+  }
+  
+
+  

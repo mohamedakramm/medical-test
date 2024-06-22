@@ -101,7 +101,7 @@ const LabForm = ({ addLab, updateLab, currentLab }) => {
           required
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" className="btbook1" type="submit">
         {lab.id ? 'Update lab' : 'Add lab'}
       </Button>
     </Form>

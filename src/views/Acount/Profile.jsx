@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css'; // استيراد مكتبة Font Awesome
 import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import './profile.css'; // استيراد ملف CSS المخصص
 
 export default function Profile() {
   const [selectedTab, setSelectedTab] = useState('personal');
@@ -45,14 +47,13 @@ export default function Profile() {
   }
 
   return (
-    <Card className="custom-card" style={{ border: '5px solid #f1f3f4' }}>
-      <Card.Header style={{ backgroundColor: '#BB8493' }}>
+    <Card className="custom-card" style={{ border: '5px solid #f1f3f4', maxWidth: '800px', margin: '20px auto' }}>
+      <Card.Header className="custom-card-header">
         <Nav variant="tabs" defaultActiveKey="#first" className="custom-nav">
           <Nav.Item>
             <Nav.Link
               href="#first"
-              className="custom-nav-link"
-              style={{ color: '#212529', fontWeight: 'bold' }}
+              className={`custom-nav-link ${selectedTab === 'personal' ? 'active' : ''}`}
               onClick={() => handleTabSelect('personal')}
             >
               Personal Information
@@ -61,8 +62,7 @@ export default function Profile() {
           <Nav.Item>
             <Nav.Link
               href="#link"
-              className="custom-nav-link"
-              style={{ color: '#212529', fontWeight: 'bold' }}
+              className={`custom-nav-link ${selectedTab === 'medical' ? 'active' : ''}`}
               onClick={() => handleTabSelect('medical')}
             >
               Medical Information
@@ -70,22 +70,20 @@ export default function Profile() {
           </Nav.Item>
         </Nav>
       </Card.Header>
-      <Card.Body style={{ padding: '20px' }}>
+      <Card.Body className="custom-card-body">
         {selectedTab === 'personal' && (
-          <Card className="custom-card" style={{ width: '700px', height: '210px', marginTop: '20px' }}>
+          <Card className="custom-sub-card">
             <ListGroup>
-              
-              <ListGroup.Item style={{ color: '#212529' }}>Name: {user.name}</ListGroup.Item>
-              <ListGroup.Item style={{ color: '#212529' }}>Phone: {user.mobile}</ListGroup.Item>
-              <ListGroup.Item style={{ color: '#212529' }}>Address: {user.address}</ListGroup.Item>
-              <ListGroup.Item style={{ color: '#212529' }}>Email: {user.email}</ListGroup.Item>
-              <ListGroup.Item>Age: 21</ListGroup.Item>
-              
+              <ListGroup.Item className="custom-list-item">Name: {user.name}</ListGroup.Item>
+              <ListGroup.Item className="custom-list-item">Phone: {user.mobile}</ListGroup.Item>
+              <ListGroup.Item className="custom-list-item">Address: {user.address}</ListGroup.Item>
+              <ListGroup.Item className="custom-list-item">Email: {user.email}</ListGroup.Item>
+              <ListGroup.Item className="custom-list-item">Age: 21</ListGroup.Item>
             </ListGroup>
           </Card>
         )}
         {selectedTab === 'medical' && (
-          <Card className="custom-card" style={{ width: '630px', height: '520px' }}>
+          <Card className="custom-sub-card">
             <Form>
               <Form.Group controlId="medicalCondition">
                 <Form.Label>Medical Condition</Form.Label>
@@ -116,15 +114,13 @@ export default function Profile() {
                 <Form.Control type="text" name="chronicDiseases" value={medicalInfo.chronicDiseases} onChange={handleInputChange} />
               </Form.Group>
             </Form>
+            <Button variant="secondary" className="custom-button2" style={{ marginTop: '20px' }}>
+              <i className="fa fa-save"></i> Save
+            </Button>
           </Card>
         )}
-        {selectedTab === 'medical' && (
-          <Button variant="primary" style={{ marginTop: '20px' }}>
-            Save
-          </Button>
-        )}
-        <Button variant="primary" style={{ marginTop: '20px' }}>
-          Edit
+        <Button variant="secondary" className="custom-button" style={{ marginTop: '20px' }}>
+          <i className="fa fa-edit"></i> Edit
         </Button>
       </Card.Body>
     </Card>

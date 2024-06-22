@@ -1,76 +1,85 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col } from 'react-bootstrap';
-import PhyForm from './PhyForm';
-import PhyList from './PhyList';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import LabForm from './LabForm';
+import LabList from './LabList';
 
-const PhyDashboard = () => {
-  const [phys, setPhys] = useState([]);
-  const [currentPhy, setCurrentPhy] = useState(null);
+const LabDashboard = () => {
+  const [labs, setLabs] = useState([]);
+  const [currentLab, setCurrentLab] = useState(null);
 
   useEffect(() => {
-    fetchPhys();
+    fetchLabs();
   }, []);
 
-  const fetchPhys = async () => {
+  const fetchLabs = async () => {
     try {
-      const response = await axios.get('http://localhost:2244/Phsiotherapy');
-      setPhys(response.data);
+      const response = await axios.get('http://localhost:8888/labData');
+      setLabs(response.data);
     } catch (error) {
-      console.error('Error fetching doctors:', error);
+      console.error('Error fetching labs:', error);
     }
   };
 
-  const addPhy = async (phy) => {
+  const addLab = async (lab) => {
     try {
-      const id = phys.length + 1; 
-      const newPhy = { ...phy, id };
-      const response = await axios.post('http://localhost:2244/Phsiotherapy', newPhy);
-      setPhys([...phys, response.data]);
+      const response = await axios.post('http://localhost:8888/labData', lab);
+      setLabs([...labs, response.data]);
     } catch (error) {
-      console.error('Error adding physiotherapist:', error);
-    }
-  };
-  
-
-  const updatePhy = async (phy) => {
-    try {
-      await axios.put(`http://localhost:2244/Phsiotherapy/${phy.id}`, phy);
-      setPhys(phys.map(d => (d.id === phy.id ? phy : d)));
-      setCurrentPhy(null);
-    } catch (error) {
-      console.error('Error updating doctor:', error);
+      console.error('Error adding lab:', error);
     }
   };
 
-  const deletePhy = async (id) => {
+  const updateLab = async (lab) => {
     try {
-      await axios.delete(`http://localhost:2244/Phsiotherapy/${id}`);
-      setPhys(phys.filter(d => d.id !== id));
+      await axios.put(`http://localhost:8888/labData/${lab.id}`, lab);
+      setLabs(labs.map(l => (l.id === lab.id ? lab : l)));
+      setCurrentLab(null);
     } catch (error) {
-      console.error(`Failed to delete doctor with id ${id}:`, error);
+      console.error('Error updating lab:', error);
     }
   };
 
-  const editphy = (phy) => {
-    setCurrentPhy(phy);
+  const deleteLab = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8888/labData/${id}`);
+      setLabs(labs.filter(l => l.id !== id));
+    } catch (error) {
+      console.error(`Failed to delete lab with id ${id}:`, error);
+    }
+  };
+
+  const editLab = (lab) => {
+    setCurrentLab(lab);
   };
 
   return (
     <Container>
-      <Row>
+      <Row className="my-4">
         <Col>
-          <h2>Physiotherapy Dashboard</h2>
-          <PhyForm addPhy={addPhy} updatePhy={updatePhy} currentPhy={currentPhy} />
+          <h2 className="text-center">Lab Dashboard</h2>
         </Col>
       </Row>
       <Row>
-        <Col>
-          <PhyList phys={phys} editPhy={editphy} deletePhy={deletePhy} />
+        <Col md={4}>
+          <Card>
+            <Card.Header className="custom-card-header">Add / Edit Lab</Card.Header>
+            <Card.Body>
+              <LabForm addLab={addLab} updateLab={updateLab} currentLab={currentLab} />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={8}>
+          <Card>
+            <Card.Header className="custom-card-header">Lab List</Card.Header>
+            <Card.Body>
+              <LabList labs={labs} editLab={editLab} deleteLab={deleteLab} />
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default PhyDashboard;
+export default LabDashboard;

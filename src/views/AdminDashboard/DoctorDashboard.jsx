@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import DoctorList from './DoctorList';
 import DoctorForm from './DoctorForm';
+import './DoctorDashboard.css'; // استيراد ملف CSS المخصص
 
 const DoctorDashboard = () => {
   const [doctors, setDoctors] = useState([]);
@@ -32,11 +33,6 @@ const DoctorDashboard = () => {
       console.error('Error adding doctor:', error);
     }
   };
-  
-  
-  
-  
-  
 
   const updateDoctor = async (doctor) => {
     try {
@@ -63,15 +59,27 @@ const DoctorDashboard = () => {
 
   return (
     <Container>
-      <Row>
+      <Row className="my-4">
         <Col>
-          <h2>Doctor Dashboard</h2>
-          <DoctorForm addDoctor={addDoctor} updateDoctor={updateDoctor} currentDoctor={currentDoctor} />
+          <h2 className="text-center">Doctor Dashboard</h2>
         </Col>
       </Row>
       <Row>
-        <Col>
-          <DoctorList doctors={doctors} editDoctor={editDoctor} deleteDoctor={deleteDoctor} />
+        <Col md={4}>
+          <Card>
+            <Card.Header className="custom-card-header">Add / Edit Doctor</Card.Header>
+            <Card.Body>
+              <DoctorForm addDoctor={addDoctor} updateDoctor={updateDoctor} currentDoctor={currentDoctor} />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={8}>
+          <Card>
+            <Card.Header className="custom-card-header">Doctor List</Card.Header>
+            <Card.Body>
+              <DoctorList doctors={doctors} editDoctor={editDoctor} deleteDoctor={deleteDoctor} />
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>

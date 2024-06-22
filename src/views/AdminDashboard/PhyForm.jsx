@@ -101,7 +101,7 @@ const PhyForm = ({ addPhy, updatePhy, currentPhy }) => {
         />
       </Form.Group>
       
-      <Button variant="primary" type="submit">
+      <Button variant="primary" className="btbook1" type="submit">
         {phy.id ? 'Update phy' : 'Add phy'}
       </Button>
     </Form>
