@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button,Alert } from 'react-bootstrap';
 
 const LabForm = ({ addLab, updateLab, currentLab }) => {
-  const [lab, setlab] = useState({  name: '', spacifcation: '' ,location:'',phone:''});
+  const [lab, setlab] = useState({  name: '', spacifcation: '' ,location:'',phone:'',image:''});
   const [error, setError] = useState('');
   useEffect(() => {
     if (currentLab) {
@@ -11,8 +11,19 @@ const LabForm = ({ addLab, updateLab, currentLab }) => {
   }, [currentLab]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setlab({ ...lab, [name]: value });
+    const { name, value, files } = e.target;
+    if (name === 'image') {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setlab({ ...lab, image: reader.result });
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    } else {
+      setlab({ ...lab, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -26,7 +37,7 @@ const LabForm = ({ addLab, updateLab, currentLab }) => {
     } else {
       addLab(lab);
     }
-    setlab({  name: '', spacifcation: '' ,location:'',phone:''});
+    setlab({  name: '', spacifcation: '' ,location:'',phone:'',image:''});
     setError('');
   };
 
@@ -67,6 +78,7 @@ const LabForm = ({ addLab, updateLab, currentLab }) => {
           required
         />
       </Form.Group>
+      
       <Form.Group>
         <Form.Label>phone</Form.Label>
         <Form.Control
@@ -78,7 +90,17 @@ const LabForm = ({ addLab, updateLab, currentLab }) => {
           required
         />
       </Form.Group>
-      
+      <Form.Group>
+        <Form.Label>photo</Form.Label>
+        <Form.Control
+          type="file"
+          name="image"
+          accept="image/*"
+          onChange={handleChange}
+          placeholder="choose your Photo"
+          required
+        />
+      </Form.Group>
       <Button variant="primary" type="submit">
         {lab.id ? 'Update lab' : 'Add lab'}
       </Button>

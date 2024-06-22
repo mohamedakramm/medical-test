@@ -1,41 +1,13 @@
-.date{
-    display: flex;
-    justify-content: space-around;
-    margin-left: 10px;
-    margin-top: 20px;
+.btbook{
+    margin-left: 190px;
+    margin-top: 50px;
+    background-color: transparent;
+    border: 2px solid #87a2be; 
+    color: #060707; 
+    transition: background-color 0.3s, color 0.3s;
 }
-h5{
-    border: 1px solid rgb(153, 73, 73);
-    border-radius: 80%;
-    width: 80px;
-    height: 62px;
-    text-align: center;
-    position: relative;
-    background-color: rgb(153, 73, 73) ;
-    color: white !important;
-    top: 12px;
-   
-}
-.ava{
-margin-top: 90px;
-text-align: center;
-margin-left: 30px;
-}
-.avaa {
-    background-color: white;
-    height: 140px;
-}
-.avaa > * {
-    margin-top: 30px;
-    /* margin-left: 10px; */
-    line-height: 35px;
-}
-.bbb{
-    margin-top: 40px;
-
-}
-.bbb > *{
-    margin-left: 30px;
-    width: 50%;
-    margin-top: 40px;
+.btbook:hover{
+    background-color: #87a2be;
+          
+          color: #030303;
 }

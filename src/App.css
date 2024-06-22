@@ -3,8 +3,8 @@
 }
 
 body{
-  
-  background-image: url(./assets/s2.webp);
+  margin: 0 !important;
+  /* background-image: url(./assets/s2.webp); */
   background-repeat: no-repeat;
   background-size: cover;
 }

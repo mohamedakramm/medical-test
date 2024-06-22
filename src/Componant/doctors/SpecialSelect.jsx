@@ -31,7 +31,7 @@ export default function SpecialSelect({ filterData }) {
 
   return (
     <div>
-      <section className="full-white-box py-2 py-md-0 mb-3">
+      <section className="full-white-box py-2 py-md-0 " style={{marginTop:'60px'}}>
         <Container>
           <div className="border rounded-12 bg-white shadow-sm inner-box py-14 px-15">
             <Row className="g-3">

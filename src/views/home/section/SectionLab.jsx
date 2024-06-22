@@ -1,61 +1,53 @@
-import { Button,  Container, Image } from 'react-bootstrap';
-import React from 'react'
-import SingleLab from '../../../Componant/Labtor/SingleLab'
-import { useState ,useEffect} from 'react'
-import {  useNavigate } from 'react-router-dom';
-import './sectionLab.css'
-import labimg from '../../../assets/WhatsApp Image 2024-04-24 at 02.20.42_d882bcd9.jpg'
+import { Button, Container, Image, Row, Col } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import SingleLab from '../../../Componant/Labtor/SingleLab';
+import { useNavigate } from 'react-router-dom';
+import './sectionLab.css';
+import labimg from '../../../assets/WhatsApp Image 2024-04-24 at 02.20.42_d882bcd9.png';
 
 export default function SectionLab() {
-    
-const scrollTotop=()=>{
-      window.scrollTo({
-        top:0,
-        behavior:'smooth'
-      })
+  const [infoo, setInfoo] = useState([]);
+  const navigate = useNavigate();
 
-}
-    const [infoo,setInfoo]=useState([]);
-    let getData =()=>{
-      fetch("http://localhost:8888/labData")
-      .then(json =>json.json())
-      .then(res =>setInfoo(res))
-    }
+  const scrollTotop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
-    useEffect(()=>
-      getData()
-    ,[])
-    const filterData= infoo.filter( lab => lab.id <= 1)
-    
-    const navigate =useNavigate()
-    const gotoNewPge=()=>{
-        navigate("/ScanLabServices")
-        
-    }
+  const getData = () => {
+    fetch('http://localhost:8888/labData')
+      .then((response) => response.json())
+      .then((data) => setInfoo(data));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const filterData = infoo.filter((lab) => lab.id <= 1);
+
+  const gotoNewPge = () => {
+    navigate('/ScanLabServices');
+    scrollTotop();
+  };
+
   return (
-    <div>
-        <div >
-        <Container style={{display:'flex'}}  >
-       
-             
-        <div  style={{width:'110%'}} >
-              {
-                    filterData.map((lab )=>
-                   <div className='w-10 ' key={lab.id}> <SingleLab key={lab.id} lab={lab} className="singleLab" /></div>
-                )
-                }
-              </div>
-         <div >
-            
-            <div className='textt'>
-            <h2>Experience high-quality <br /> testing  and radiology <br /> without barriers</h2>
-            <Button onClick={()=>{gotoNewPge();scrollTotop()}} id='btn'>learn more</Button>
-            </div>
-            <br />
-            <Image src={labimg} className='imggg' />
-        </div>
-      </Container>
-        </div>
-    </div>
-  )
+    <Container style={{marginTop:'70px'}} >
+      <Row>
+        <Col md={6} className="text-center textt">
+          <h2>
+            Experience high-quality <br /> testing and radiology without barriers
+          </h2>
+          <Button onClick={gotoNewPge} id="btn">
+            Learn More
+          </Button>
+        </Col>
+        <Col md={6} className="text-center">
+          <Image src={labimg} className="imggg" fluid />
+        </Col>
+      </Row>
+    </Container>
+  );
 }

@@ -1,22 +1,32 @@
- .textt{
-    position: relative;
-    z-index: 1;
-    top: 177px;
-}  
-.imggg{
-    width: 43%;
-    position: relative;
-    top: 25px;
-    left: 295px;
+
+.textt{
+  margin-top: 200px !important;
+
 }
+
+.imggg {
+    width: 100%;
+  
+}
+
 #btn{
-    width: 146px;
-    border: 1px #937950;
-    background-color: #ac8b58;
-    color: black;
-    border-style: solid;
-    font-size: 18px;
-    text-transform: capitalize;
-    margin-top: 10px;
-    margin-left: 57px;
+  width: 146px;
+  
+  
+  color: black;
+  border-style: solid;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-top: 30px;
+  /* margin-left: 304px; */
+ 
+  background-color: transparent;
+  border: 2px solid #87a2be; 
+  
+  transition: background-color 0.3s, color 0.3s;
+} 
+#btn:hover{
+  background-color: #87a2be;
 }
+
+

@@ -1,0 +1,50 @@
+.header {
+  /* position: relative; */
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/11.webp') no-repeat center center;
+  background-size: cover;
+  color: white;
+  /* margin-top:10px ; */
+ 
+}
+
+    .header-title {
+      font-size: 6rem;
+      margin-bottom: 390px;
+      /* margin-top: 10px; */
+      margin-left: 50px;
+      padding: 40px;
+    }
+
+    
+    .header-text {
+      opacity: 0.8;
+      /* margin-top: -80px; */
+      font-size: 1.25rem;
+      /* margin-right: 700px; */
+      }
+.header-buttons {
+          margin-top: 2rem;
+        }
+
+        .header-buttons .custom-button {
+          background-color: transparent;
+          border: 2px solid #87a2be; 
+          color: #d9dfe6; 
+          transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .header-buttons .custom-button:hover {
+  background-color: #87a2be;
+          
+          color: #030303; 
+        }
+
+
+
+
+
+
+
+
+

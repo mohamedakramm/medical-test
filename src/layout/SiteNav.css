@@ -1,11 +1,95 @@
-.w-2{
+/* SiteNav.css */
+.w-2 {
     width: 170px;
     height: 30px;
     margin-top: 10px;
-}
-.icon{
+  }
+  
+  .icon {
     margin: 10px;
-}
-.logo img{
-    width: 17%;
-}
+  }
+  
+  .logo img {
+    width: 110%;
+  }
+  
+  .custom-navbar {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0) !important; /* شفافية الخلفية */
+    backdrop-filter: blur(10px); /* تضبيب الخلفية للمزيد من الجمالية */
+    
+    position: relative;
+  }
+  .custom-navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1px; /* بداية الخط من اليسار */
+    right: 1px; /* نهاية الخط من اليمين */
+    height: 4px;
+    background-color: #000000; /* لون الخط */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  
+  .nav-link:hover {
+           color:#87a2be ;
+  }
+  
+  .icon {
+    cursor: pointer;
+    color: #6b6d6e;
+    margin-right: 20px;
+  }
+  
+  .icon:hover {
+    color: #87a2be;
+
+  }
+  
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+
+  
+  
+  .search-and-lang {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* تجعل العناصر تلتصق بالجهة اليمنى */
+    gap: 20px;
+  }
+  
+  .search-and-lang .btn {
+    margin-left: 10px;
+    background-color: #6b6d6e;
+    border-color: #5a5a5a;
+    color: #fff;
+  }
+  
+  .search-and-lang .btn:hover,
+  .search-and-lang .btn:focus,
+  .search-and-lang .btn:active {
+    background-color: #87a2be;
+     color: #000000;
+    border-color: #87a2be;
+  }
+  
+  .search-and-lang .dropdown-toggle {
+    margin-left: 10px;
+  }
+  

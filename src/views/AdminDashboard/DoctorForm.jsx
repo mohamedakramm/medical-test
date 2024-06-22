@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button,Alert } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 
 const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
-  const [doctor, setDoctor] = useState({  name: '', specialization: '' ,Pediatrician:'',location:'',fees:'',speciall:''});
+  const [doctor, setDoctor] = useState({ name: '', specialization: '', Pediatrician: '', location: '', fees: '', speciall: '', image: '' });
   const [error, setError] = useState('');
+
   useEffect(() => {
     if (currentDoctor) {
       setDoctor(currentDoctor);
@@ -11,13 +12,24 @@ const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
   }, [currentDoctor]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDoctor({ ...doctor, [name]: value });
+    const { name, value, files } = e.target;
+    if (name === 'image') {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setDoctor({ ...doctor, image: reader.result });
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    } else {
+      setDoctor({ ...doctor, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!doctor.name || !doctor.specialization  ) {
+    if (!doctor.name || !doctor.specialization) {
       setError('Both name and specialization are required');
       return;
     }
@@ -26,13 +38,13 @@ const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
     } else {
       addDoctor(doctor);
     }
-    setDoctor({  name: '', specialization: '' ,Pediatrician:'',location:'',fees:'',speciall:''});
+    setDoctor({ name: '', specialization: '', Pediatrician: '', location: '', fees: '', speciall: '', image: '' });
     setError('');
   };
 
   return (
     <Form onSubmit={handleSubmit}>
-        {error && <Alert variant="danger">{error}</Alert>}
+      {error && <Alert variant="danger">{error}</Alert>}
       <Form.Group>
         <Form.Label>Name</Form.Label>
         <Form.Control
@@ -67,7 +79,7 @@ const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>location</Form.Label>
+        <Form.Label>Location</Form.Label>
         <Form.Control
           type="text"
           name="location"
@@ -78,7 +90,7 @@ const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>fees</Form.Label>
+        <Form.Label>Fees</Form.Label>
         <Form.Control
           type="number"
           name="fees"
@@ -89,13 +101,24 @@ const DoctorForm = ({ addDoctor, updateDoctor, currentDoctor }) => {
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>speciall</Form.Label>
+        <Form.Label>Speciall</Form.Label>
         <Form.Control
           type="text"
           name="speciall"
           value={doctor.speciall}
           onChange={handleChange}
           placeholder="Enter speciall"
+          required
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Photo</Form.Label>
+        <Form.Control
+          type="file"
+          name="image"
+          accept="image/*"
+          onChange={handleChange}
+          placeholder="Choose your Photo"
           required
         />
       </Form.Group>

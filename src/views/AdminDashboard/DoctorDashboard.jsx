@@ -23,14 +23,20 @@ const DoctorDashboard = () => {
 
   const addDoctor = async (doctor) => {
     try {
-      const id = doctors.length ? doctors[doctors.length - 1].id + 1 : 1;
-      const newDoctor = { ...doctor, id };
+      const id = doctors.length + 1; 
+      const formattedId = id.toLocaleString(); 
+      const newDoctor = { ...doctor, id: formattedId }; 
       const response = await axios.post('http://localhost:3333/doctors', newDoctor);
       setDoctors([...doctors, response.data]);
     } catch (error) {
       console.error('Error adding doctor:', error);
     }
   };
+  
+  
+  
+  
+  
 
   const updateDoctor = async (doctor) => {
     try {

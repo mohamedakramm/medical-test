@@ -1,110 +1,116 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
-import SingleDoctor from './SingleDoctor';
-import './doctordetail.css'
-import { useParams } from 'react-router-dom'
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import './singleDoctor.css'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { Button, Col, Container, Row, Image } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyBill1, faStar ,faLocationDot  } from '@fortawesome/free-solid-svg-icons';
 import AppoinmentForm from '../appoinment/AppoinmentForm';
+import FeedbackForm from './FeedbackForm';
+import './doctordetail.css';
+import './singleDoctor.css';
+import SectionChat from "../../views/home/section/SectionChat"
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 export default function Doctordetails() {
-let params=useParams() 
- 
- let [data ,setData]=useState([]) ;
+  let params = useParams();
+  let [data, setData] = useState([]);
+  let [feedbacks, setFeedbacks] = useState([]);
 
- 
- const getData=()=>{
-    fetch(`http://localhost:3333/doctors/${params.doctorId}` )
-    .then(json=>json.json())
-    .then(res=>setData(res))
- }
-useEffect(()=>
+  const getData = () => {
+    fetch(`http://localhost:3333/doctors/${params.doctorId}`)
+      .then((json) => json.json())
+      .then((res) => setData(res));
+  };
 
-getData(),
-[]
-)
-const [currentDate, setCurrentDate] = useState(new Date());
-const [nextDate, setNextDate] = useState(null);
-const [nextNextDate, setNextNextDate] = useState(null);
+  useEffect(() => {
+    getData();
+    const savedFeedback = localStorage.getItem(`feedback-${params.doctorId}`);
+    if (savedFeedback) {
+      setFeedbacks([savedFeedback]);
+    }
+  }, [params.doctorId]);
 
-useEffect(() => {
-  const currentDateObj = new Date();
-  setCurrentDate(currentDateObj);
+//   var x= localStorage.clear()
+// console.log(x)
+  const [showForm, setShowForm] = useState(false);
+  const handleShowForm = () => setShowForm(true);
+  const handleCloseForm = () => setShowForm(false);
 
-  // Calculate next date
-  const nextDateObj = new Date(currentDateObj);
-  nextDateObj.setDate(currentDateObj.getDate() + 1);
-  setNextDate(nextDateObj);
+  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const handleShowFeedbackForm = () => setShowFeedbackForm(true);
+  const handleCloseFeedbackForm = () => setShowFeedbackForm(false);
 
-  // Calculate next next date
-  const nextNextDateObj = new Date(currentDateObj);
-  nextNextDateObj.setDate(currentDateObj.getDate() + 2);
-  setNextNextDate(nextNextDateObj);
-}, []);
-
-const getShortDay = (date) => {
-  return date.toLocaleDateString('en-US', { weekday: 'short' }).substring(0, 3);
-};
-const [showForm, setShowForm] = useState(false);
-
-const handleShowForm = () => setShowForm(true);
-const handleCloseForm = () => setShowForm(false);
+  const addFeedback = (feedback) => {
+    setFeedbacks([...feedbacks, feedback]);
+    
+  };
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      
+    }
+  }, []);
   return (
     <div>
-       <Container>
-        <Row      lg='2' md='2' sm='12'>
-
-          
-           
-           <SingleDoctor  key={data.id} doctor={data} />
-
-              <Col>
-              
-              <div className='ava'>
-                <h3>Available Appointments :</h3>
-                <div>
-                  <div className="date">
-                    <div>
-                      <h5> {getShortDay(currentDate)} <br /> {currentDate.getDate()}</h5>
-                      <div className='avaa'>
-                        <span>Available</span>  <br />
-                        <span>12 pm</span><br />
-                        <span> 6 pm</span><br />
-                        <span> 8 pm</span><br />
-                      </div>
-                    </div>
-                    <div>
-                      <h5> {nextDate && getShortDay(nextDate)} <br /> {nextDate && nextDate.getDate()}</h5>
-                      <div className='avaa'>
-                      <span>  Available </span> <br />
-                        <span>12 pm</span> <br />
-                        <span> 8 pm</span><br />
-                        <span>6 pm</span><br />
-                      </div>
-                    </div>
-                    <div>
-                      <h5>{nextNextDate && getShortDay(nextNextDate)} <br /> {nextNextDate && nextNextDate.getDate()}</h5>
-                      <div className='avaa'>
-                        <span>Available</span> <br />
-                        <span>12 pm</span> <br />
-                        <span>8 pm</span> <br />
-                        <span>6 pm</span> <br />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 <div className='bbb'> 
-                      <Button onClick={handleShowForm}>Book</Button>
-                      <AppoinmentForm show={showForm} handleClose={handleCloseForm} docid={data} />
-                 </div>
-              </div>
-              </Col>
-           
-           
+      <Container className='border rounded-12 bg-white shadow-sm inner-box py-14 px-15' style={{ marginTop: '20px' }}>
+        <Row lg='2' md='2' sm='12'>
+          <Col style={{ display: 'flex' }}>
+            <Image src={data.image} style={{ width: '30%' }} />
+            <div style={{ marginLeft: '15px' }}>
+              <h3>{data.name}</h3>
+              <p>{data.Pediatrician}</p>
+              <p><FontAwesomeIcon icon={faMoneyBill1} /> fees: {data.fees} EGB</p>
+              <p><FontAwesomeIcon icon={faLocationDot} /> Location: {data.location} </p>
+            </div>
+          </Col>
+          <Col>
+            <Button onClick={handleShowForm} className='btbook'>Book an appointment</Button>
+            <AppoinmentForm show={showForm} handleClose={handleCloseForm} docid={data} />
+          </Col>
         </Row>
-       </Container>
-
-
-       
+      </Container>
+      <Container className='border rounded-12 bg-white shadow-sm inner-box py-14 px-15' style={{ marginTop: '20px' }}>
+        <Row lg='2' md='2' sm='1'>
+          <Col>
+            <p style={{color:'#089bab' , marginBottom:'30px'}}>Feedback</p>
+            <p style={{fontWeight:'bold' ,fontSize:'20px'}}>General Feedback</p>
+            <p><span style={{fontSize:'25px'}}>{data.name} </span><span>({feedbacks.length} review ) </span>
+              <FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} /><FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} /><FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} /><FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} /><FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} />
+            </p>
+            <p>
+              <FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} />
+              <span style={{fontWeight:'bold',marginLeft:'6px'}}>5.0 </span>   <span>Provides follow-ups and reviews as needed</span>
+            </p>
+            <p>
+              <FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} />
+              <span style={{fontWeight:'bold',marginLeft:'6px'}}>5.0 </span><span>Works to handle difficult cases</span>
+            </p>
+            <p>
+              <FontAwesomeIcon icon={faStar} style={{ color: '#ecc023' }} />
+              <span style={{fontWeight:'bold',marginLeft:'6px'}}>5.0 </span> <span>Information rich medical content</span>
+            </p>
+            <hr style={{ width: '100%' }} />
+            <p>ALL reviews </p>
+            {feedbacks.map((feedback, index) => (
+              <p key={index}> 
+              <p>
+              <FontAwesomeIcon icon={faUser }  /> {user.name}</p>
+              {feedback}</p>
+            ))}
+          </Col>
+          <Col>
+            <Button onClick={handleShowFeedbackForm}  className='btbook'>Leave a review</Button>
+            <FeedbackForm
+              doctorId={params.doctorId}
+              show={showFeedbackForm}
+              handleClose={handleCloseFeedbackForm}
+              addFeedback={addFeedback}
+            />
+          </Col>
+        </Row>
+      </Container>
+      <SectionChat/>
     </div>
-  )
+  );
 }

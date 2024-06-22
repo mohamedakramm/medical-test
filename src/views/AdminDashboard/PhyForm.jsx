@@ -11,8 +11,19 @@ const PhyForm = ({ addPhy, updatePhy, currentPhy }) => {
   }, [currentPhy]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setPhy({ ...phy, [name]: value });
+    const { name, value, files } = e.target;
+    if (name === 'image') {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhy({ ...phy, image: reader.result });
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    } else {
+      setPhy({ ...phy, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -75,6 +86,17 @@ const PhyForm = ({ addPhy, updatePhy, currentPhy }) => {
           value={phy.phone}
           onChange={handleChange}
           placeholder="Enter phone"
+          required
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>photo</Form.Label>
+        <Form.Control
+          type="file"
+          name="image"
+          accept="image/*"
+          onChange={handleChange}
+          placeholder="choose your Photo"
           required
         />
       </Form.Group>

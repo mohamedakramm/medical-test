@@ -23,14 +23,15 @@ const PhyDashboard = () => {
 
   const addPhy = async (phy) => {
     try {
-      const id = phys.length ? phys[phys.length - 1].id + 1 : 1;
-      const newDoctor = { ...phy, id };
-      const response = await axios.post('http://localhost:2244/Phsiotherapy', newDoctor);
+      const id = phys.length + 1; 
+      const newPhy = { ...phy, id };
+      const response = await axios.post('http://localhost:2244/Phsiotherapy', newPhy);
       setPhys([...phys, response.data]);
     } catch (error) {
-      console.error('Error adding doctor:', error);
+      console.error('Error adding physiotherapist:', error);
     }
   };
+  
 
   const updatePhy = async (phy) => {
     try {
