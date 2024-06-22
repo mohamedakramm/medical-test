@@ -12,7 +12,7 @@ function PhysiotherapyCenter() {
     .then(json => json.json())
     .then(res => setInfoo(res))
   }
-
+//habhoba
   useEffect(()=>
     getData()
   ,[])
