@@ -19,7 +19,7 @@ export default function SinglePhysiotherapy({phy}) {
             <p style={{textAlign:'center'}}>{phy.spacifcation}</p>
             </div>
           </div>
-          <Button className='btttn'>visit the Doctor's Profile</Button>
+          <Button className='btttn'>visit  Profile</Button>
     </div>
       
           

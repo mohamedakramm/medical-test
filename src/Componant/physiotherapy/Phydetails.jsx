@@ -66,9 +66,7 @@ export default function Phydetails() {
     return <p>Loading...</p>;
   }
 
-  const getShortDay = (date) => {
-    return date.toLocaleDateString('en-US', { weekday: 'short' }).substring(0, 3);
-  };
+  
 
   return (
     <div>
