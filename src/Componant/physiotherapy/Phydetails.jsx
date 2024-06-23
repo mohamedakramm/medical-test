@@ -137,6 +137,9 @@ export default function Phydetails() {
             <Button onClick={handleShowFeedbackForm} className="btbook">
               Leave a review
             </Button>
+            <Button onClick={handleShowFeedbackForm} className="btbook">
+            Let's chat
+            </Button>
             <FeedbackForm
               show={showFeedbackForm}
               handleClose={handleCloseFeedbackForm}
