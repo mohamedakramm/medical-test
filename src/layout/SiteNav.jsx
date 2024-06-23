@@ -57,6 +57,7 @@ export default function SiteNav() {
               <NavLink to="/doctor" className="nav-link">{t("Doctors")}</NavLink>
               <NavLink to="/ScanLabServices" className="nav-link">{t('RADIOLOGY&TEST')}</NavLink>
               <NavLink to="/medicalCenter" className="nav-link"> {t('PHSIOTHERAPY')}</NavLink>
+              <NavLink to="/" className="nav-link"> {t('Ai Help')}</NavLink>
             </Nav>
             <Nav className="search-and-lang">
               <FontAwesomeIcon icon={faLanguage}
