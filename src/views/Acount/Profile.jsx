@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import './profile.css'; // استيراد ملف CSS المخصص
+import ApointmentProfile from './ApointmentProfile';
 
 export default function Profile() {
   const [selectedTab, setSelectedTab] = useState('personal');
@@ -68,6 +69,15 @@ export default function Profile() {
               Medical Information
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              href="#link"
+              className={`custom-nav-link ${selectedTab === 'apointment' ? 'active' : ''}`}
+              onClick={() => handleTabSelect('apointment')}
+            >
+              Apointment Information
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
       </Card.Header>
       <Card.Body className="custom-card-body">
@@ -119,6 +129,9 @@ export default function Profile() {
             </Button>
           </Card>
         )}
+        {selectedTab === "apointment"&&
+        <ApointmentProfile/>
+        }
         <Button variant="secondary" className="custom-button" style={{ marginTop: '20px' }}>
           <i className="fa fa-edit"></i> Edit
         </Button>

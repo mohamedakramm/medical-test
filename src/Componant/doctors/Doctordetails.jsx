@@ -9,6 +9,7 @@ import './doctordetail.css';
 import './singleDoctor.css';
 import SectionChat from "../../views/home/section/SectionChat"
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import ChatForm from './ChatForm';
 export default function Doctordetails() {
   let params = useParams();
   let [data, setData] = useState([]);
@@ -51,6 +52,15 @@ export default function Doctordetails() {
       
     }
   }, []);
+  const [showChatForm, setShowChatForm] = useState(false);
+  const [chatMessages, setChatMessages] = useState([]);
+
+  const handleShowChatForm = () => setShowChatForm(true);
+  const handleCloseChatForm = () => setShowChatForm(false);
+
+  const addChatMessage = (message) => {
+    setChatMessages([...chatMessages, message]);
+  };
   return (
     <div>
       <Container className='border rounded-12 bg-white shadow-sm inner-box py-14 px-15' style={{ marginTop: '20px' }}>
@@ -101,6 +111,13 @@ export default function Doctordetails() {
           </Col>
           <Col>
             <Button onClick={handleShowFeedbackForm}  className='btbook'>Leave a review</Button>
+            <Button onClick={handleShowChatForm} className='btbook'>Open Chat</Button>
+              <ChatForm
+                chatId="1" // Replace with a dynamic ID if needed
+                show={showChatForm}
+                handleClose={handleCloseChatForm}
+                addChatMessage={addChatMessage}
+              />
             <FeedbackForm
               doctorId={params.doctorId}
               show={showFeedbackForm}
